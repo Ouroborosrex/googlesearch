@@ -1,15 +1,21 @@
 from setuptools import setup
 
-with open("README.md", "r", encoding='UTF-8') as fh:
-    long_description = fh.read()
-
-with open("requirements.txt", "r", encoding='UTF-8') as fh:
-    requirements = fh.read().split("\n")
-
+try:
+  with open("./README.md", "r", encoding='UTF-8') as fh:
+      long_description = fh.read()
+except:
+  with open("./googlesearch/README.md", "r", encoding='UTF-8') as fh:
+      long_description = fh.read()
+try:
+  with open("./requirements.txt", "r", encoding='UTF-8') as fh:
+      requirements = fh.read().split("\n")
+except:
+  with open("./googlesearch/requirements.txt", "r", encoding='UTF-8') as fh:
+      requirements = fh.read().split("\n")
 setup(
     name="googlesearch-python",
     version="1.3.0",
-    author="Nishant Vikramaditya",
+    author="Nishant Vikramaditya and Bryce Hinkley",
     author_email="junk4Nv7@gmail.com",
     description="A Python library for scraping the Google search engine.",
     long_description=long_description,
